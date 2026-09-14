@@ -38,6 +38,7 @@ services:
             - './vendor/laravel/sail/database/pgsql/create-testing-database.sql:/docker-entrypoint-initdb.d/10-create-testing-database.sql'
         networks:
             - sail
+        command: postgres -c shared_buffers=256MB -c max_connections=300 -c work_mem=96MB -c maintenance_work_mem=256MB
         healthcheck:
             test:
                 - CMD
