@@ -54,7 +54,7 @@ return [
     | system used by the application. Typically, Eloquent is utilized.
     |
     | If you have multiple user tables or models you may configure multiple
-    | providers to represent the model / table. These providers may then
+    | providers to represent the model / tables. These providers may then
     | be assigned to any extra authentication guards you have defined.
     |
     | Supported: "database", "eloquent"
@@ -69,7 +69,7 @@ return [
 
         // 'users' => [
         //     'driver' => 'database',
-        //     'table' => 'users',
+        //     'tables' => 'users',
         // ],
     ],
 
@@ -79,7 +79,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | These configuration options specify the behavior of Laravel's password
-    | reset functionality, including the table utilized for token storage
+    | reset functionality, including the tables utilized for token storage
     | and the user provider that is invoked to actually retrieve users.
     |
     | The expiry time is the number of minutes that each reset token will be
@@ -95,7 +95,7 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
+            'tables' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
             'expire' => 60,
             'throttle' => 60,
         ],

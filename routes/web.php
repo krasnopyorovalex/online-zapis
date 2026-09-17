@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+declare(strict_types=1);
 
-Route::get('/', function () {
-    return view('welcome');
+use App\Http\Middleware\Owner;
+
+Route::middleware([Owner::class])->group(function () {
+    Route::livewire('companies', 'pages::company.index')->name('companies.index');
+    Route::livewire('companies/create', 'pages::company.create')->name('companies.create');
 });
